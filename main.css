@@ -1,0 +1,27 @@
+body {
+ background-color: #aa01ff;
+}
+
+h1 {
+    font-family: "Calibri Light", sans-serif;
+    background: linear-gradient(90deg, #ceff00, #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.box {
+    font-size: 15pt;
+    border: 3px solid;
+    border-radius: 200px;
+    border-image: linear-gradient(90deg, #aa01ff, #b60c0c) 1;
+    padding: 10px;
+}
+
+.box p {
+    font-family: "Book Antiqua", sans-serif;
+}
+img {
+    height: 500px;
+    width: 700px;
+}
