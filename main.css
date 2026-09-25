@@ -1,5 +1,5 @@
 body {
- background-color: #aa01ff;
+ background-color: #f6f6f6;
 }
 
 h1 {
@@ -13,15 +13,53 @@ h1 {
 .box {
     font-size: 15pt;
     border: 3px solid;
-    border-radius: 200px;
-    border-image: linear-gradient(90deg, #aa01ff, #b60c0c) 1;
+    border-radius: 2000px;
     padding: 10px;
 }
 
 .box p {
     font-family: "Book Antiqua", sans-serif;
 }
+
 img {
     height: 500px;
     width: 700px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.prvni-slovo {
+    color: red;
+}
+
+.druhy-slovo {
+    color: blue;
+}
+
+.treti-slovo {
+    color: green;
+}
+
+.ctvrty-slovo {
+    color: purple;
+    text-decoration: underline;
+}
+
+.paty-slovo {
+    font-weight: bold;
+}
+
+.sesty-slovo {
+    font-style: italic;
+    font-family: Castellar, serif;
+}
+
+.sedmy-slovo {
+    color: orange;
+}
+
+.osmy-slovo {
+    color: gold;
 }

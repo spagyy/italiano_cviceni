@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    background: white;
+    font-family: Bahnschrift, Arial, sans-serif;
+}
+
+nav {
+    width: 80%;
+    max-width: 1145px;
+    height: 640px;
+    margin: 60px auto 0;
+    background: white;
+    border-radius: 16px;
+    position: relative;
+}
+
+#wollo-logo-picture {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    width: 75px;
+    height: auto;
+}
+
+#wollo-category {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#wollo-category ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 14px 25px;
+    list-style: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+#wollo-category li {
+    list-style: none;
+}
+
+#wollo-category a {
+    color: #111;
+    text-decoration: none;
+    font-size: 12px;
+}
+#wollo-buttons {
+    position: absolute;
+    top: 29px;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#login {
+    color: #111;
+    text-decoration: none;
+    font-size: 12px;
+}
+#start-free-trial-black {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 115px;
+    height: 37px;
+    background: #050505;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#start-free-trial-black::after {
+    content: "Start Free Trial";
+}
+h1 {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    margin: 0;
+    font-family: Bahnschrift, Arial, sans-serif;
+    font-size: 50px;
+    line-height: 1.05;
+    font-weight: 400;
+    text-align: center;
+    color: #111;
+}
+#wollo-heading-buttons {
+    position: absolute;
+    top: 322px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 12px;
+}
+
+#start-free-trial-purple,
+#create-free-acc {
+    height: 41px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#start-free-trial-purple {
+    background: #6625ed;
+    color: white;
+}
+
+#create-free-acc {
+    background: white;
+    color: grey;
+    border: 1px solid white;
+}
+
+relative, absolut,
