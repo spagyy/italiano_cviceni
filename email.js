@@ -1,12 +1,11 @@
-document.getElementById("formular").addEventListener("submit", function(event) {
-    event.preventDefault();
+const form = document.querySelector("form");
+const email = document.getElementById("email");
 
-    let email = document.getElementById("email").value;
-    let vysledek = document.getElementById("vysledek");
-
-    if (email.includes("@")) {
-        vysledek.textContent = "E-mail je správně.";
+form.addEventListener("submit", function (event) {
+    if (!email.value.includes("@")) {
+        event.preventDefault();
+        alert("E-mail musí obsahovat @!");
     } else {
-        vysledek.textContent = "E-mail musí obsahovat znak @.";
+        alert("E-mail je v pořádku, formulář byl odeslán.");
     }
 });
