@@ -1,20 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    text-align: center;
-    padding-top: 50px;
-}
-
-h1 {
-    color: #333;
-    margin-bottom: 30px;
-}
-
 form {
-    background-color: white;
-    width: 400px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        max-width: 360px;
+        margin: 2rem auto;
+        font-family: sans-serif;
+}
+label {
+        display: block;
+        margin-top: 1rem;
+}
+input {
+        width: 100%;
+        padding: .5rem;
+        box-sizing: border-box;
+}
+.error {
+        color: #c00;
+        font-size: .85rem;
+        min-height: 1.1em;
+}
+input.invalid {
+        border: 1px solid #c00;
+}
+button {
+        margin-top: 1.5rem;
+        padding: .6rem 1.2rem;
 }
