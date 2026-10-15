@@ -2,32 +2,45 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Formulář</title>
-    <style>
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrace uživatele</title>
+    <link rel="stylesheet" href="email.css">
 </head>
 <body>
-<form id="myForm" novalidate>
-    <label for="firstName">Jméno:</label>
-    <input type="text" id="firstName" name="firstName" required>
-    <div class="error" id="firstName-error"></div>
+<main class="card">
+    <h1>Registrace</h1>
+    <p class="intro">Vyplňte údaje a vytvořte si účet.</p>
 
-    <label for="lastName">Příjmení:</label>
-    <input type="text" id="lastName" name="lastName" required>
-    <div class="error" id="lastName-error"></div>
+    <form id="registration-form" novalidate>
+        <div class="field">
+            <label for="first-name">Jméno</label>
+            <input type="text" id="first-name" name="firstName" autocomplete="given-name">
+            <span class="error" id="error-first-name" role="alert"></span>
+        </div>
 
-    <label for="birthdate">Datum narození:</label>
-    <input type="date" id="birthdate" name="birthdate" min="1920-01-01" required>
-    <div class="error" id="birthdate-error"></div>
+        <div class="field">
+            <label for="last-name">Příjmení</label>
+            <input type="text" id="last-name" name="lastName" autocomplete="family-name">
+            <span class="error" id="error-last-name" role="alert"></span>
+        </div>
 
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" required>
-    <div class="error" id="email-error"></div>
+        <div class="field">
+            <label for="birth-date">Datum narození</label>
+            <input type="date" id="birth-date" name="birthDate" autocomplete="bday">
+            <span class="error" id="error-birth-date" role="alert"></span>
+        </div>
 
-    <button type="submit">Odeslat</button>
-</form>
+        <div class="field">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" autocomplete="email" inputmode="email">
+            <span class="error" id="error-email" role="alert"></span>
+        </div>
 
-<script></script>
+        <button type="submit">Zaregistrovat se</button>
+        <p class="success" id="success-message" role="status"></p>
+    </form>
+</main>
+
+<script src="regval.js"></script>
 </body>
 </html>
