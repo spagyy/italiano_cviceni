@@ -4,11 +4,11 @@
         --text: #1c2733;
         --text-muted: #5a6877;
         --border: #c3ccd6;
-        --accent: #1f5fbf;
-        --accent-dark: #174a96;
-        --error: #b3261e;
+        --accent: #ef7f1a;
+        --accent-dark: #ef7f1a;
+        --error: #e31e24;
         --error-bg: #fdeceb;
-        --success: #1b7a3d;
+        --success: #00a0e3;
 }
 
 * {
