@@ -117,3 +117,24 @@ button:focus-visible {
         font-weight: 600;
         text-align: center;
 }
+
+canvas,
+svg {
+        display: block;
+        margin-top: 1rem;
+}
+
+/* Vrstva s náhodnými tvary přes celou stránku, za kartou */
+.scatter {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;   /* neblokuje klikání na formulář */
+        z-index: 0;
+}
+
+.card {
+        position: relative;
+        z-index: 1;             /* karta je nad tvary */
+}

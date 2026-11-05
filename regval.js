@@ -112,3 +112,64 @@ form.addEventListener("submit", function (event) {
         );
     }
 });
+
+// Náhodně rozházené čtverce a kruhy po celé stránce
+const SVG_NS = "http://www.w3.org/2000/svg";
+const SHAPE_COUNT = 25;
+const SHAPE_COLORS = ["#ef7f1a", "#00a0e3"];
+
+const scatter = document.createElementNS(SVG_NS, "svg");
+scatter.setAttribute("class", "scatter");
+document.body.prepend(scatter);
+
+function drawScatter() {
+    scatter.replaceChildren();
+
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const card = document.querySelector(".card").getBoundingClientRect();
+    const gap = 10; // volné místo kolem karty
+
+    let created = 0;
+    let tries = 0;
+
+    while (created < SHAPE_COUNT && tries < 500) {
+        tries++;
+
+        const size = 20 + Math.random() * 50;
+        const x = Math.random() * (w - size);
+        const y = Math.random() * (h - size);
+
+        // Přeskoč tvary, které by zasahovaly do karty
+        const overlapsCard =
+            x + size > card.left - gap && x < card.right + gap &&
+            y + size > card.top - gap && y < card.bottom + gap;
+        if (overlapsCard) continue;
+
+        const color = SHAPE_COLORS[Math.floor(Math.random() * SHAPE_COLORS.length)];
+        let shape;
+
+        if (Math.random() < 0.5) {
+            // Čtverec
+            shape = document.createElementNS(SVG_NS, "rect");
+            shape.setAttribute("x", String(x));
+            shape.setAttribute("y", String(y));
+            shape.setAttribute("width", String(size));
+            shape.setAttribute("height", String(size));
+        } else {
+            // Kruh
+            shape = document.createElementNS(SVG_NS, "circle");
+            shape.setAttribute("cx", String(x + size / 2));
+            shape.setAttribute("cy", String(y + size / 2));
+            shape.setAttribute("r", String(size / 2));
+        }
+
+        shape.setAttribute("fill", color);
+        shape.setAttribute("opacity", "0.6");
+        scatter.appendChild(shape);
+        created++;
+    }
+}
+
+drawScatter();
+window.addEventListener("resize", drawScatter); // přegeneruje při změně velikosti okna
