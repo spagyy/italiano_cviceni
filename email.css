@@ -1,140 +1,140 @@
 :root {
-        --background: #eef2f6;
-        --card-bg: #ffffff;
-        --text: #1c2733;
-        --text-muted: #5a6877;
-        --border: #c3ccd6;
-        --accent: #ef7f1a;
-        --accent-dark: #ef7f1a;
-        --error: #e31e24;
-        --error-bg: #fdeceb;
-        --success: #00a0e3;
+--background: #eef2f6;
+--card-bg: #ffffff;
+--text: #1c2733;
+--text-muted: #5a6877;
+--border: #c3ccd6;
+--accent: #ef7f1a;
+--accent-dark: #ef7f1a;
+--error: #e31e24;
+--error-bg: #fdeceb;
+--success: #00a0e3;
 }
 
 * {
-        box-sizing: border-box;
+box-sizing: border-box;
 }
 
 body {
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem;
-        background: var(--background);
-        color: var(--text);
-        font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-        line-height: 1.5;
+margin: 0;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 1.5rem;
+background: var(--background);
+color: var(--text);
+font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+line-height: 1.5;
 }
 
 .card {
-        width: 100%;
-        max-width: 26rem;
-        background: var(--card-bg);
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 24px rgba(28, 39, 51, 0.1);
+width: 100%;
+max-width: 26rem;
+background: var(--card-bg);
+padding: 2rem;
+border-radius: 10px;
+box-shadow: 0 4px 24px rgba(28, 39, 51, 0.1);
 }
 
 h1 {
-        margin: 0 0 0.25rem;
-        font-size: 1.75rem;
+margin: 0 0 0.25rem;
+font-size: 1.75rem;
 }
 
 .intro {
-        margin: 0 0 1.5rem;
-        color: var(--text-muted);
+margin: 0 0 1.5rem;
+color: var(--text-muted);
 }
 
 .field {
-        margin-bottom: 1.1rem;
+margin-bottom: 1.1rem;
 }
 
 label {
-        display: block;
-        margin-bottom: 0.3rem;
-        font-weight: 600;
-        font-size: 0.95rem;
+display: block;
+margin-bottom: 0.3rem;
+font-weight: 600;
+font-size: 0.95rem;
 }
 
 input {
-        width: 100%;
-        padding: 0.65rem 0.75rem;
-        font: inherit;
-        color: var(--text);
-        background: #fff;
-        border: 1.5px solid var(--border);
-        border-radius: 6px;
+width: 100%;
+padding: 0.65rem 0.75rem;
+font: inherit;
+color: var(--text);
+background: #fff;
+border: 1.5px solid var(--border);
+border-radius: 6px;
 }
 
 input:focus-visible {
-        outline: 3px solid rgba(31, 95, 191, 0.3);
-        border-color: var(--accent);
+outline: 3px solid rgba(31, 95, 191, 0.3);
+border-color: var(--accent);
 }
 
 input.invalid {
-        border-color: var(--error);
-        background: var(--error-bg);
+border-color: var(--error);
+background: var(--error-bg);
 }
 
 input.valid {
-        border-color: var(--success);
+border-color: var(--success);
 }
 
 .error {
-        display: block;
-        min-height: 1.25rem;
-        margin-top: 0.25rem;
-        font-size: 0.85rem;
-        color: var(--error);
+display: block;
+min-height: 1.25rem;
+margin-top: 0.25rem;
+font-size: 0.85rem;
+color: var(--error);
 }
 
 button {
-        width: 100%;
-        padding: 0.75rem;
-        font: inherit;
-        font-weight: 600;
-        color: #fff;
-        background: var(--accent);
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
+width: 100%;
+padding: 0.75rem;
+font: inherit;
+font-weight: 600;
+color: #fff;
+background: var(--accent);
+border: none;
+border-radius: 6px;
+cursor: pointer;
 }
 
 button:hover {
-        background: var(--accent-dark);
+background: var(--accent-dark);
 }
 
 button:focus-visible {
-        outline: 3px solid rgba(31, 95, 191, 0.4);
-        outline-offset: 2px;
+outline: 3px solid rgba(31, 95, 191, 0.4);
+outline-offset: 2px;
 }
 
 .success {
-        margin: 1rem 0 0;
-        color: var(--success);
-        font-weight: 600;
-        text-align: center;
+margin: 1rem 0 0;
+color: var(--success);
+font-weight: 600;
+text-align: center;
 }
 
 canvas,
 svg {
-        display: block;
-        margin-top: 1rem;
+display: block;
+margin-top: 1rem;
 }
 
 /* Vrstva s náhodnými tvary přes celou stránku, za kartou */
 .scatter {
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;   /* neblokuje klikání na formulář */
-        z-index: 0;
+position: fixed;
+inset: 0;
+width: 100%;
+height: 100%;
+pointer-events: none; /* neblokuje klikání na formulář */
+z-index: 0;
 }
 
 .card {
-        position: relative;
-        z-index: 1;             /* karta je nad tvary */
+position: relative;
+z-index: 1; /* karta je nad tvary */
 }
