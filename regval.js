@@ -113,63 +113,57 @@ input.classList.remove("valid", "invalid")
 }
 });
 
+
 // Náhodně rozházené čtverce a kruhy po celé stránce
-const SVG_NS = "http://www.w3.org/2000/svg";
-const SHAPE_COUNT = 25;
-const SHAPE_COLORS = ["#ef7f1a", "#00a0e3"];
+const SVG_NS = "http://www.w3.org/2000/svg"; // definuje ten SVG prostor názvů, který je potřeba pro vytváření SVG tvarů.
+const SHAPE_COUNT = 25; // počet tvarů
+const SHAPE_COLORS = ["#ef7f1a", "#00a0e3"]; // barvy pro tvary
 
-const scatter = document.createElementNS(SVG_NS, "svg");
-scatter.setAttribute("class", "scatter");
-document.body.prepend(scatter);
+// Vytvoření SVG elementu
+const scatter = document.createElementNS(SVG_NS, "svg"); // Vytvoří nový SVG element pro umístění tvarů.
+scatter.setAttribute("class", "scatter"); // Přiřadí SVG elementu CSS třídu scatter.
+document.body.prepend(scatter); // Vloží SVG element na začátek těla HTML stránky.
 
-function drawScatter() {
-scatter.replaceChildren();
+function drawScatter() { // funkca která vykresluje náhodné tvary.
+scatter.replaceChildren(); // Odstraní všechny dosud vytvořené tvary.
 
-const w = window.innerWidth;
-const h = window.innerHeight;
-const card = document.querySelector(".card").getBoundingClientRect();
-const gap = 10; // volné místo kolem karty
+const w = window.innerWidth; // Zjistí šířku okna prohlížeče.
+const h = window.innerHeight; // Zjistí výšku okna prohlížeče.
 
-let created = 0;
-let tries = 0;
+let created = 0; // Počítá počet již vytvořených tvarů.
+let tries = 0; // Počítá počet pokusů o vytvoření tvarů.
 
-while (created < SHAPE_COUNT && tries < 500) {
-tries++;
+while (created < SHAPE_COUNT && tries < 500) { // Opakuje vytváření tvarů, dokud jich není 25 nebo dokud nedosáhne 500 pokusů.
+tries++; // Zvýší počet pokusů o jednu.
 
-const size = 20 + Math.random() * 50;
-const x = Math.random() * (w - size);
-const y = Math.random() * (h - size);
+const size = 20 + Math.random() * 50; // Vygeneruje náhodnou velikost tvaru od 20 do 70 pixelů.
+const x = Math.random() * (w - size); // Vypočítá náhodnou vodorovnou pozici tvaru.
+const y = Math.random() * (h - size); // Vypočítá náhodnou svislou pozici tvaru.
 
-// Přeskoč tvary, které by zasahovaly do karty
-const overlapsCard =
-x + size > card.left - gap && x < card.right + gap &&
-y + size > card.top - gap && y < card.bottom + gap;
-if (overlapsCard) continue;
+const color = SHAPE_COLORS[Math.floor(Math.random() * SHAPE_COLORS.length)]; // Náhodně vybere jednu z dostupných barev.
+let shape; // Vytvoří proměnnou, do které se uloží čtverec nebo kruh.
 
-const color = SHAPE_COLORS[Math.floor(Math.random() * SHAPE_COLORS.length)];
-let shape;
-
-if (Math.random() < 0.5) {
-// Čtverec
-shape = document.createElementNS(SVG_NS, "rect");
-shape.setAttribute("x", String(x));
-shape.setAttribute("y", String(y));
-shape.setAttribute("width", String(size));
-shape.setAttribute("height", String(size));
-} else {
-// Kruh
-shape = document.createElementNS(SVG_NS, "circle");
-shape.setAttribute("cx", String(x + size / 2));
-shape.setAttribute("cy", String(y + size / 2));
-shape.setAttribute("r", String(size / 2));
+if (Math.random() < 0.5) { // Náhodně rozhodne, zda se vytvoří čtverec.
+    // Čtverec
+    shape = document.createElementNS(SVG_NS, "rect"); // Vytvoří SVG obdélník.
+    shape.setAttribute("x", String(x)); // Nastaví vodorovnou pozici čtverce.
+    shape.setAttribute("y", String(y)); // Nastaví svislou pozici čtverce.
+    shape.setAttribute("width", String(size)); // Nastaví šířku čtverce.
+    shape.setAttribute("height", String(size)); // Nastaví výšku čtverce.
+} else { // Pokud podmínka neplatí, vytvoří se kruh.
+    // Kruh
+    shape = document.createElementNS(SVG_NS, "circle"); // Vytvoří SVG kruh.
+    shape.setAttribute("cx", String(x + size / 2)); // Nastaví vodorovnou souřadnici středu kruhu.
+    shape.setAttribute("cy", String(y + size / 2)); // Nastaví svislou souřadnici středu kruhu.
+    shape.setAttribute("r", String(size / 2)); // Nastaví poloměr kruhu.
 }
 
-shape.setAttribute("fill", color);
-shape.setAttribute("opacity", "0.6");
-scatter.appendChild(shape);
-created++;
+shape.setAttribute("fill", color); // Nastaví barvu výplně tvaru.
+shape.setAttribute("opacity", "0.6"); // Nastaví průhlednost tvaru na 60 %.
+scatter.appendChild(shape); // Vloží vytvořený tvar do SVG elementu.
+created++; // Zvýší počet vytvořených tvarů o jednu.
 }
 }
 
-drawScatter();
-window.addEventListener("resize", drawScatter); // přegeneruje při změně velikosti okna
+drawScatter(); // Poprvé spustí funkci pro vykreslení tvarů.
+window.addEventListener("resize", drawScatter); // Při změně velikosti okna znovu rozmístí všechny tvary.
