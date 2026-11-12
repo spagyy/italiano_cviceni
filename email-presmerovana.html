@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrace uživatele</title>
-    <link rel="stylesheet" href="email.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registrace uživatele</title>
+<link rel="stylesheet" href="email.css">
 </head>
 <body>
 <main class="card">
-    <h1>Registrace</h1>
-    <p class="intro">Vyplňte údaje a vytvořte si účet.</p>
+<h1>Registrace</h1>
+<p class="intro">Vyplňte údaje a vytvořte si účet.</p>
 
-    <form id="registration-form" novalidate>
-        <div class="field">
-            <label for="first-name">Jméno</label>
-            <input type="text" id="first-name" name="firstName" autocomplete="given-name">
-            <span class="error" id="error-first-name" role="alert"></span>
-        </div>
+<form id="registration-form" novalidate>
+<div class="field">
+<label for="first-name">Jméno</label>
+<input type="text" id="first-name" name="firstName" autocomplete="given-name">
+<span class="error" id="error-first-name" role="alert"></span>
+</div>
 
-        <div class="field">
-            <label for="last-name">Příjmení</label>
-            <input type="text" id="last-name" name="lastName" autocomplete="family-name">
-            <span class="error" id="error-last-name" role="alert"></span>
-        </div>
+<div class="field">
+<label for="last-name">Příjmení</label>
+<input type="text" id="last-name" name="lastName" autocomplete="family-name">
+<span class="error" id="error-last-name" role="alert"></span>
+</div>
 
-        <div class="field">
-            <label for="birth-date">Datum narození</label>
-            <input type="date" id="birth-date" name="birthDate" autocomplete="bday">
-            <span class="error" id="error-birth-date" role="alert"></span>
-        </div>
+<div class="field">
+<label for="birth-date">Datum narození</label>
+<input type="date" id="birth-date" name="birthDate" autocomplete="bday">
+<span class="error" id="error-birth-date" role="alert"></span>
+</div>
 
-        <div class="field">
-            <label for="email">E-mail</label>
-            <input type="text" id="email" name="email" autocomplete="email" inputmode="email">
-            <span class="error" id="error-email" role="alert"></span>
-        </div>
+<div class="field">
+<label for="email">E-mail</label>
+<input type="text" id="email" name="email" autocomplete="email" inputmode="email">
+<span class="error" id="error-email" role="alert"></span>
+</div>
 
-        <button type="submit">Zaregistrovat se</button>
-        <p class="success" id="success-message" role="status"></p>
-    </form>
+<button type="submit">Zaregistrovat se</button>
+<p class="success" id="success-message" role="status"></p>
+</form>
 
 
 
-    <!-- VIDEO -->
-    <h2>Video</h2>
-    <video width="320" height="180" controls>
-        <source src="dont-stop-the-music-full-body-dance-workout---rihanna.mp4" type="video/mp4">
-        Váš prohlížeč nepodporuje přehrávání videa.
-    </video>
+<!-- VIDEO -->
+<h2>Video</h2>
+<video width="320" height="180" controls>
+<source src="dont-stop-the-music-full-body-dance-workout---rihanna.mp4" type="video/mp4">
+Váš prohlížeč nepodporuje přehrávání videa.
+</video>
 
-    <!-- AUDIO -->
-    <h2>Audio</h2>
-    <audio controls>
-        <source src="no-broke-boys-official-audio.mp3" type="audio/mpeg">
-        Váš prohlížeč nepodporuje přehrávání audia.
-    </audio>
+<!-- AUDIO -->
+<h2>Audio</h2>
+<audio controls>
+<source src="no-broke-boys-official-audio.mp3" type="audio/mpeg">
+Váš prohlížeč nepodporuje přehrávání audia.
+</audio>
 
-    <!-- YOUTUBE VIDEO -->
-    <h2>YouTube video</h2>
-    <iframe
-            width="320"
-            height="180"
-            src="https://www.youtube.com/embed/ScMzIvxBSi4"
-            title="YouTube video"
-            allowfullscreen>
-    </iframe>
+<!-- YOUTUBE VIDEO -->
+<h2>YouTube video</h2>
+<iframe
+width="320"
+height="180"
+src="https://www.youtube.com/embed/ScMzIvxBSi4"
+title="YouTube video"
+allowfullscreen>
+</iframe>
 </main>
 
 <script src="regval.js"></script>
